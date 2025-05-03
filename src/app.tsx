@@ -1,5 +1,6 @@
 import KANA from "./data.ts";
 import {useState} from "react";
+import "./index.css"
 
 const HIRAGANA = 'hiragana';
 const KATAKANA = 'katakana';
