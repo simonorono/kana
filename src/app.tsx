@@ -7,9 +7,14 @@ const KATAKANA = 'katakana';
 export function App() {
     const [kana, setKana] = useState(HIRAGANA)
 
+    const onChange = (ev: Event) => {
+        const target = ev.target as HTMLInputElement
+        setKana(target.value)
+    }
+
     return (
         <div>
-            <select onChange={ev => setKana(ev.target.value)}>
+            <select onChange={onChange}>
                 {[HIRAGANA, KATAKANA].map(opt => (
                     <option
                         key={opt}
