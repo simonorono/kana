@@ -41,11 +41,9 @@ export function App() {
                 {Object.entries(KANA).map(([key, value]) => (
                     <tr>
                         <th>{key}</th>
-                        <td>{value.a[kana]}</td>
-                        <td>{value.i[kana]}</td>
-                        <td>{value.u[kana]}</td>
-                        <td>{value.e[kana]}</td>
-                        <td>{value.o[kana]}</td>
+                        {['a', 'i', 'u', 'e', 'o'].map(k => (
+                            <td>{value[k][kana]}</td>
+                        ))}
                     </tr>
                 ))}
                 </tbody>
