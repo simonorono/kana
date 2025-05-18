@@ -18,7 +18,7 @@ export function App() {
     <div>
       <div>
         {[HIRAGANA, KATAKANA].map(v => (
-          <label>
+          <label key={v}>
             <input
               checked={v === kana}
               name="kana"
