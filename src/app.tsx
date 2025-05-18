@@ -16,13 +16,20 @@ export function App() {
 
   return (
     <div>
-      <select onChange={onChange}>
-        {[HIRAGANA, KATAKANA].map(opt => (
-          <option key={opt} value={opt} selected={opt === kana}>
-            {opt}
-          </option>
+      <div>
+        {[HIRAGANA, KATAKANA].map(v => (
+          <label>
+            <input
+              checked={v === kana}
+              name="kana"
+              onChange={onChange}
+              type="radio"
+              value={v}
+            />
+            <span>{v}</span>
+          </label>
         ))}
-      </select>
+      </div>
 
       <table>
         <thead>
