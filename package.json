@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier -w src"
   },
   "dependencies": {
     "preact": "^10.26.6"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
+    "prettier": "3.5.3",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }

@@ -1,12 +1,16 @@
 select {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-table, tr, td, th {
-    border: 1px solid black;
-    border-collapse: collapse;
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
-td, th {
-    padding: 0.25em;
+td,
+th {
+  padding: 0.25em;
 }
