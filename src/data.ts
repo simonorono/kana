@@ -1,4 +1,4 @@
-const KANA = {
+export const SEION = {
   a: {
     a: { hiragana: "あ", katakana: "ア" },
     i: { hiragana: "い", katakana: "イ" },
@@ -70,4 +70,42 @@ const KANA = {
     o: { hiragana: "を", katakana: "ヲ" },
   },
 }
-export default KANA
+
+const DAKUTEN_MAP = {
+  k: "g",
+  s: "z",
+  t: "d",
+  h: "b",
+}
+
+const HANDAKUTEN_MAP = {
+  h: "p",
+}
+
+const DAKUTEN = "\u3099"
+const HANDAKUTEN = "\u309A"
+
+function transformToDakuon(entry, glyph) {
+  let copy = structuredClone(entry)
+
+  for (let key in copy) {
+    copy[key].hiragana += glyph
+    copy[key].katakana += glyph
+  }
+
+  return copy
+}
+
+export function dakuon() {
+  let map = {}
+
+  for (let [seion, char] of Object.entries(DAKUTEN_MAP)) {
+    map[char] = transformToDakuon(SEION[seion], DAKUTEN)
+  }
+
+  for (let [seion, char] of Object.entries(HANDAKUTEN_MAP)) {
+    map[char] = transformToDakuon(SEION[seion], HANDAKUTEN)
+  }
+
+  return map
+}

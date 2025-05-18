@@ -1,5 +1,6 @@
-import KANA from "./data.ts"
-import { useState } from "react"
+import { dakuon, SEION } from "./data.ts"
+import { useState } from "preact/hooks"
+import Table from "./components/table.tsx"
 
 import "./index.css"
 
@@ -15,8 +16,8 @@ export function App() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="p-6">
+      <div className="flex flex-col">
         {[HIRAGANA, KATAKANA].map(v => (
           <label key={v}>
             <input
@@ -31,28 +32,10 @@ export function App() {
         ))}
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>a</th>
-            <th>i</th>
-            <th>u</th>
-            <th>e</th>
-            <th>o</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(KANA).map(([key, value]) => (
-            <tr>
-              <th>{key}</th>
-              {["a", "i", "u", "e", "o"].map(k => (
-                <td>{value[k][kana]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="flex flex-row items-baseline space-x-4">
+        <Table entries={SEION} kana={kana} />
+        <Table entries={dakuon()} kana={kana} />
+      </div>
     </div>
   )
 }
