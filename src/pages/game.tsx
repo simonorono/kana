@@ -151,7 +151,7 @@ export default function Game() {
               {options.map(opt => (
                 <div
                   className={[
-                    "cursor-pointer border-2 p-4 text-center text-2xl",
+                    "font-japanese cursor-pointer border-2 p-4 text-center text-2xl",
                     isCorrectGuess(opt) || (guess && isSecret(opt))
                       ? "border-green-600 bg-green-600 text-white"
                       : false,
