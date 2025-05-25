@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks"
-import { SEION } from "../data.ts"
+import { ArrowPathIcon } from "@heroicons/react/24/solid"
+import { HIRAGANA, KATAKANA, SEION } from "../data.ts"
 
 const MAX_CACHED_SECRETS = 20
 
@@ -30,6 +31,10 @@ export default function Game() {
   const [secret, setSecret] = useState(null)
   const [secretCache, setSecretCache] = useState([])
   const [options, setOptions] = useState([])
+  const [guessType, setGuessType] = useState(false)
+
+  const guessing = guessType ? HIRAGANA : KATAKANA
+  const selecting = guessType ? KATAKANA : HIRAGANA
 
   function addOption(options: Array<Array<string>>): Array<Array<string>> {
     const entries = Object.entries(SEION)
@@ -91,6 +96,7 @@ export default function Game() {
     }
 
     setOptions(shuffle(newOptions))
+    setGuessType(!guessType)
   }
 
   function newGame() {
@@ -118,7 +124,7 @@ export default function Game() {
       {secret && (
         <div className="mx-auto flex h-screen max-w-md flex-col items-center justify-center select-none">
           <div
-            className="flex h-6/8 w-full flex-col items-center justify-center"
+            className="relative flex h-6/8 w-full flex-col items-center justify-center"
             onClick={newGame}
           >
             <p className="mt-4 font-medium">Guess the correct option</p>
@@ -128,9 +134,16 @@ export default function Game() {
 
             <div className="flex grow items-center justify-center">
               <p className="font-japanese text-9xl">
-                {SEION[secret[0]][secret[1]].hiragana}
+                {SEION[secret[0]][secret[1]][guessing]}
               </p>
             </div>
+
+            {guess && (
+              <p className="absolute right-4 bottom-4 flex flex-row items-center space-x-2">
+                <ArrowPathIcon className="size-8" />
+                <span>New guess</span>
+              </p>
+            )}
           </div>
 
           <div className="h-2/8 w-full p-4">
@@ -150,7 +163,7 @@ export default function Game() {
                     .join(" ")}
                   onClick={() => !guess && setGuess(opt)}
                 >
-                  {SEION[opt[0]][opt[1]].katakana}
+                  {SEION[opt[0]][opt[1]][selecting]}
                 </div>
               ))}
             </div>
