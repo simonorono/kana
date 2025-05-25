@@ -15,23 +15,32 @@ export default function Index() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 p-6">
-      <div className="flex flex-row items-center justify-center space-x-2">
-        {[HIRAGANA, KATAKANA].map(v => (
-          <Radio
-            checked={v === kana}
-            key={v}
-            label={v}
-            name="kana"
-            onChange={onChange}
-            value={v}
-          />
-        ))}
+    <div className="flex flex-col items-center justify-center">
+      <div className="flex w-full flex-row items-center justify-between p-2 text-xl shadow shadow-green-700">
+        <p className="font-japanese text-4xl font-bold">仮名</p>
+        <a className="block text-blue-800 underline" href="/game">
+          Game
+        </a>
       </div>
 
-      <div className="inline-flex flex-row flex-wrap items-baseline space-y-4 min-[685px]:space-x-2">
-        <Table className="grow" entries={SEION} kana={kana} />
-        <Table className="grow" entries={dakuon()} kana={kana} />
+      <div className="space-y-4 p-6">
+        <div className="flex flex-row items-center justify-center space-x-2">
+          {[HIRAGANA, KATAKANA].map(v => (
+            <Radio
+              checked={v === kana}
+              key={v}
+              label={v}
+              name="kana"
+              onChange={onChange}
+              value={v}
+            />
+          ))}
+        </div>
+
+        <div className="inline-flex flex-row flex-wrap items-baseline space-y-4 min-[685px]:space-x-2">
+          <Table className="grow" entries={SEION} kana={kana} />
+          <Table className="grow" entries={dakuon()} kana={kana} />
+        </div>
       </div>
     </div>
   )
