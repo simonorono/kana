@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource/kosugi-maru/japanese.css";
+
+@theme {
+  --font-japanese: "Kosugi Maru", "sans-serif";
+}

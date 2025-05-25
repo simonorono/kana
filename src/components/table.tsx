@@ -27,7 +27,7 @@ export default function Table(props: Props) {
             <tr className={key}>
               <th className={`${CELL_CLASSES}`}>{key}</th>
               {Object.entries(value).map(([key, value]) => (
-                <td key={key} className={`${CELL_CLASSES}`}>
+                <td key={key} className={`${CELL_CLASSES} font-japanese`}>
                   {value[kana] ?? "—"}
                 </td>
               ))}
