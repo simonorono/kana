@@ -118,12 +118,19 @@ export default function Game() {
       {secret && (
         <div className="mx-auto flex h-screen max-w-md flex-col items-center justify-center select-none">
           <div
-            className="flex h-6/8 w-full items-center justify-center"
+            className="flex h-6/8 w-full flex-col items-center justify-center"
             onClick={newGame}
           >
-            <p className="font-japanese text-9xl">
-              {SEION[secret[0]][secret[1]].hiragana}
-            </p>
+            <p className="mt-4 font-medium">Guess the correct option</p>
+            <a href="/" className="text-blue-800 underline">
+              {"<-"} Back to table
+            </a>
+
+            <div className="flex grow items-center justify-center">
+              <p className="font-japanese text-9xl">
+                {SEION[secret[0]][secret[1]].hiragana}
+              </p>
+            </div>
           </div>
 
           <div className="h-2/8 w-full p-4">
