@@ -27,7 +27,7 @@ export default function Table(props: Props) {
             <tr>
               <th className={`${CELL_CLASSES}`}>{key}</th>
               {["a", "i", "u", "e", "o"].map(k => (
-                <td className={`${CELL_CLASSES}`}>{value[k][kana]}</td>
+                <td className={`${CELL_CLASSES}`}>{value[k][kana] ?? "—"}</td>
               ))}
             </tr>
           ))}
