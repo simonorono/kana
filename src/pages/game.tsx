@@ -116,7 +116,7 @@ export default function Game() {
   return (
     <>
       {secret && (
-        <div className="flex h-screen flex-col items-center justify-center select-none">
+        <div className="mx-auto flex h-screen max-w-md flex-col items-center justify-center select-none">
           <div
             className="flex h-6/8 w-full items-center justify-center"
             onClick={newGame}
