@@ -42,6 +42,14 @@ export default function Index() {
           <Table className="grow" entries={dakuon()} kana={kana} />
         </div>
       </div>
+
+      <div className="text-center">
+        <p>Made with ❤️ in Maracaibo, Venezuela</p>
+        <a className="text-blue-800 underline" href="https://simonorono.com">
+          by Simón Oroño
+        </a>
+        <div className="h-10" />
+      </div>
     </div>
   )
 }
