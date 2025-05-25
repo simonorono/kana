@@ -105,11 +105,22 @@ export default function Game() {
     setup()
   }, [])
 
+  const isSecret = option =>
+    secret && option[0] === secret[0] && option[1] === secret[1]
+
+  const isSelected = option =>
+    guess && option[0] === guess[0] && option[1] === guess[1]
+
+  const isCorrectGuess = option => isSecret(option) && isSelected(option)
+
   return (
     <>
       {secret && (
-        <div className="flex h-screen flex-col items-center justify-center">
-          <div className="flex h-6/8 items-center" onClick={newGame}>
+        <div className="flex h-screen flex-col items-center justify-center select-none">
+          <div
+            className="flex h-6/8 w-full items-center justify-center"
+            onClick={newGame}
+          >
             <p className="font-japanese text-9xl">
               {SEION[secret[0]][secret[1]].hiragana}
             </p>
@@ -117,32 +128,24 @@ export default function Game() {
 
           <div className="h-2/8 w-full p-4">
             <div className="flex justify-between">
-              {options.map(opt => {
-                const selected =
-                  guess && opt[0] === guess[0] && opt[1] === guess[1]
-                const correct =
-                  selected && guess[0] === secret[0] && guess[1] === secret[1]
-
-                return (
-                  <div
-                    className={[
-                      "cursor-pointer border-2 p-4 text-center text-xl",
-                      selected && correct
-                        ? "border-green-600 bg-green-600 text-white"
-                        : false,
-                      selected && !correct
-                        ? "border-red-600 bg-red-600"
-                        : false,
-                      selected ? "text-white" : false,
-                    ]
-                      .filter(Boolean)
-                      .join(" ")}
-                    onClick={() => !guess && setGuess(opt)}
-                  >
-                    {SEION[opt[0]][opt[1]].katakana}
-                  </div>
-                )
-              })}
+              {options.map(opt => (
+                <div
+                  className={[
+                    "cursor-pointer border-2 p-4 text-center text-2xl",
+                    isCorrectGuess(opt) || (guess && isSecret(opt))
+                      ? "border-green-600 bg-green-600 text-white"
+                      : false,
+                    isSelected(opt) && !isCorrectGuess(opt)
+                      ? "border-red-600 bg-red-600 text-white"
+                      : false,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  onClick={() => !guess && setGuess(opt)}
+                >
+                  {SEION[opt[0]][opt[1]].katakana}
+                </div>
+              ))}
             </div>
           </div>
         </div>
