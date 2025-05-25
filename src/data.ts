@@ -69,6 +69,9 @@ export const SEION = {
     e: { hiragana: null, katakana: null },
     o: { hiragana: "を", katakana: "ヲ" },
   },
+  _n: {
+    n: { hiragana: "ん", katakana: "ン" },
+  },
 }
 
 const DAKUTEN_MAP = {

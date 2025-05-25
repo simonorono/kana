@@ -24,10 +24,12 @@ export default function Table(props: Props) {
         </thead>
         <tbody>
           {Object.entries(entries).map(([key, value]) => (
-            <tr>
+            <tr className={key}>
               <th className={`${CELL_CLASSES}`}>{key}</th>
-              {["a", "i", "u", "e", "o"].map(k => (
-                <td className={`${CELL_CLASSES}`}>{value[k][kana] ?? "—"}</td>
+              {Object.entries(value).map(([key, value]) => (
+                <td key={key} className={`${CELL_CLASSES}`}>
+                  {value[kana] ?? "—"}
+                </td>
               ))}
             </tr>
           ))}
