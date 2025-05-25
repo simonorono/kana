@@ -1,10 +1,7 @@
 import { useState } from "preact/hooks"
-import { dakuon, SEION } from "../data.ts"
+import { HIRAGANA, KATAKANA, dakuon, SEION } from "../data.ts"
 import Radio from "../components/radio.tsx"
 import Table from "../components/table.tsx"
-
-const HIRAGANA = "hiragana"
-const KATAKANA = "katakana"
 
 export default function Index() {
   const [kana, setKana] = useState(HIRAGANA)

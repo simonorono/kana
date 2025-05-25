@@ -1,3 +1,6 @@
+export const HIRAGANA = "hiragana"
+export const KATAKANA = "katakana"
+
 export const SEION = {
   a: {
     a: { hiragana: "あ", katakana: "ア" },
