@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource/kosugi-maru/japanese.css";
+@import "@fontsource-variable/noto-sans-jp/index.css";
 
 @theme {
-  --font-japanese: "Kosugi Maru", "sans-serif";
+  --font-japanese: "Noto Sans JP Variable", "sans-serif";
 }

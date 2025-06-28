@@ -10,7 +10,7 @@
     "format": "prettier -w src"
   },
   "dependencies": {
-    "@fontsource/kosugi-maru": "^5.2.5",
+    "@fontsource-variable/noto-sans-jp": "^5.2.6",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.1.7",
     "preact": "^10.26.7",
