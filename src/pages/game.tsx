@@ -4,10 +4,10 @@ import { HIRAGANA, KATAKANA, SEION } from "../data.ts"
 
 const MAX_CACHED_SECRETS = 20
 
-function getRandomNumber() {
+function getRandomNumber(max: number) {
   const buffer = new Uint16Array(1)
   crypto.getRandomValues(buffer)
-  return buffer[0]
+  return buffer[0] % max
 }
 
 export function shuffle<T>(array: T[]): T[] {
@@ -38,10 +38,10 @@ export default function Game() {
 
   function addOption(options: Array<Array<string>>): Array<Array<string>> {
     const entries = Object.entries(SEION)
-    const rowIndex = getRandomNumber() % entries.length
+    const rowIndex = getRandomNumber(entries.length)
 
     const columns = Object.entries(entries[rowIndex][1])
-    const columnIndex = getRandomNumber() % columns.length
+    const columnIndex = getRandomNumber(columns.length)
 
     const newOption = [entries[rowIndex][0], columns[columnIndex][0]]
 
@@ -65,10 +65,10 @@ export default function Game() {
     setOptions([])
 
     const entries = Object.entries(SEION)
-    const rowIndex = getRandomNumber() % entries.length
+    const rowIndex = getRandomNumber(entries.length)
 
     const columns = Object.entries(entries[rowIndex][1])
-    const columnIndex = getRandomNumber() % columns.length
+    const columnIndex = getRandomNumber(columns.length)
 
     // non-existing kana, re-run setup
     if (columns[columnIndex][1].hiragana === null) {
