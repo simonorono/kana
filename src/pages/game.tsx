@@ -26,6 +26,27 @@ function shuffle<T>(array: T[]): T[] {
   return newArray
 }
 
+function optionToRomaji(opt: Array<string>): string {
+  if (["a", "_n"].includes(opt[0])) {
+    return opt[1]
+  }
+
+  const EXCEPTIONS = {
+    chi: ["t", "i"],
+    tsu: ["t", "u"],
+    shi: ["s", "i"],
+    fu: ["h", "u"],
+  }
+
+  for (let [romaji, pair] of Object.entries(EXCEPTIONS)) {
+    if (opt[0] === pair[0] && opt[1] === pair[1]) {
+      return romaji
+    }
+  }
+
+  return opt.join("")
+}
+
 export default function Game() {
   const [guess, setGuess] = useState(null)
   const [secret, setSecret] = useState(null)
@@ -151,7 +172,7 @@ export default function Game() {
               {options.map(opt => (
                 <div
                   className={[
-                    "font-japanese cursor-pointer border-2 p-4 text-center text-2xl",
+                    "font-japanese relative flex cursor-pointer flex-col border-2 p-4 text-center text-2xl",
                     isCorrectGuess(opt) || (guess && isSecret(opt))
                       ? "border-green-600 bg-green-600 text-white"
                       : false,
@@ -163,7 +184,12 @@ export default function Game() {
                     .join(" ")}
                   onClick={() => !guess && setGuess(opt)}
                 >
-                  {SEION[opt[0]][opt[1]][selecting]}
+                  <span>{SEION[opt[0]][opt[1]][selecting]}</span>
+                  {guess && (
+                    <small className="absolute bottom-0 left-1 text-xs">
+                      {optionToRomaji(opt)}
+                    </small>
+                  )}
                 </div>
               ))}
             </div>
