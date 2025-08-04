@@ -10,7 +10,7 @@ function getRandomNumber(max: number) {
   return buffer[0] % max
 }
 
-export function shuffle<T>(array: T[]): T[] {
+function shuffle<T>(array: T[]): T[] {
   let newArray = array.slice()
 
   for (let i = newArray.length - 1; i > 0; i--) {
