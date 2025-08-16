@@ -25,16 +25,14 @@ function Jp(props: JpProps) {
       {word.jp.split("").map(c => {
         const hasFurigana = !!word.furigana[kanjiIndex]
 
-        if (isKanji(c) && hasFurigana) {
-          return (
-            <ruby>
-              {c}
+        return (
+          <ruby>
+            {c}
+            {isKanji(c) && hasFurigana && (
               <rt>{word.furigana[kanjiIndex++]}</rt>
-            </ruby>
-          )
-        }
-
-        return <ruby>{c}</ruby>
+            )}
+          </ruby>
+        )
       })}
     </>
   )
