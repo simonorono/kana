@@ -1,0 +1,62 @@
+[
+  {
+    "en": "January",
+    "jp": "一月",
+    "furigana": ["いち", "がつ"]
+  },
+  {
+    "en": "February",
+    "jp": "二月",
+    "furigana": ["に", "がつ"]
+  },
+  {
+    "en": "March",
+    "jp": "三月",
+    "furigana": ["さん", "がつ"]
+  },
+  {
+    "en": "April",
+    "jp": "四月",
+    "furigana": ["よん", "がつ"]
+  },
+  {
+    "en": "May",
+    "jp": "五月",
+    "furigana": ["ご", "がつ"]
+  },
+  {
+    "en": "June",
+    "jp": "六月",
+    "furigana": ["ろく", "がつ"]
+  },
+  {
+    "en": "July",
+    "jp": "七月",
+    "furigana": ["しち", "がつ"]
+  },
+  {
+    "en": "August",
+    "jp": "八月",
+    "furigana": ["はち", "がつ"]
+  },
+  {
+    "en": "September",
+    "jp": "九月",
+    "furigana": ["く", "がつ"]
+  },
+  {
+    "en": "October",
+    "jp": "十月",
+    "furigana": ["じゅう", "がつ"]
+  },
+  {
+    "en": "November",
+    "jp": "十一月",
+    "furigana": ["じゅう", "いち", "がつ"]
+  },
+  {
+    "en": "December",
+    "jp": "十二月",
+    "furigana": ["じゅう", "に", "がつ"]
+  }
+]
