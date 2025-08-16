@@ -17,8 +17,7 @@ export default function Time() {
         <Subtitle>Months</Subtitle>
 
         <p>
-          Months are easy, just the number of the month followed by the suffix
-          月.
+          For months, just use number of the month followed by the suffix 月.
         </p>
 
         <Wordlist list={months} />
