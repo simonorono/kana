@@ -18,3 +18,17 @@ export function toKana(word: Word): string {
     .map(c => (isKanji(c) ? word.furigana[kanjiIndex++] : c))
     .join("")
 }
+
+export function csvToWord(csvText: string): Word[] {
+  let lines = csvText.split(/\r?\n/)
+
+  return lines.map(line => {
+    const parts = line.trim().split(",")
+
+    return {
+      jp: parts[0].trim(),
+      en: parts[1].trim(),
+      furigana: parts[2].split("|").map(_ => _.trim()),
+    }
+  })
+}

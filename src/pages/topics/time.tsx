@@ -1,10 +1,15 @@
 import Wordlist from "../../components/wordlist.tsx"
 import Subtitle from "../../components/subtitle.tsx"
 
-import weekdays from "../../data/time/weekdays.json"
-import months from "../../data/time/months.json"
+import { csvToWord } from "../../utils"
+
+import weekdaysCsv from "../../data/time/weekdays.csv?raw"
+import monthsCsv from "../../data/time/months.csv?raw"
 
 export default function Time() {
+  const months = csvToWord(monthsCsv)
+  const weekdays = csvToWord(weekdaysCsv)
+
   return (
     <div class="space-y-8 text-2xl">
       <div>
