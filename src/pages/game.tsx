@@ -154,7 +154,7 @@ export default function Game() {
             </a>
 
             <div className="flex grow items-center justify-center">
-              <p className="font-japanese text-9xl">
+              <p className="text-9xl">
                 {SEION[secret[0]][secret[1]][guessing]}
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function Game() {
               {options.map(opt => (
                 <div
                   className={[
-                    "font-japanese relative flex cursor-pointer flex-col border-2 p-4 text-center text-2xl",
+                    "relative flex cursor-pointer flex-col border-2 p-4 text-center text-2xl",
                     isCorrectGuess(opt) || (guess && isSecret(opt))
                       ? "border-green-600 bg-green-600 text-white"
                       : false,

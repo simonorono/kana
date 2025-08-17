@@ -2,5 +2,5 @@
 @import "@fontsource-variable/noto-sans-jp/index.css";
 
 @theme {
-  --font-japanese: "Noto Sans JP Variable", "sans-serif";
+  --font-sans: "sans-serif", "Noto Sans JP Variable";
 }

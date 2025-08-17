@@ -14,7 +14,7 @@ export default function Index() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex w-full flex-row items-center justify-between p-2 text-xl shadow shadow-green-700">
-        <p className="font-japanese text-4xl font-bold">仮名</p>
+        <p className="text-4xl font-bold">仮名</p>
         <a className="block text-blue-800 underline" href="/game">
           Game
         </a>

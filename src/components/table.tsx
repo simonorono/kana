@@ -14,20 +14,20 @@ export default function Table(props: Props) {
       <table className="mx-auto">
         <thead>
           <tr>
-            <th className={`${CELL_CLASSES}`}></th>
-            <th className={`${CELL_CLASSES}`}>a</th>
-            <th className={`${CELL_CLASSES}`}>i</th>
-            <th className={`${CELL_CLASSES}`}>u</th>
-            <th className={`${CELL_CLASSES}`}>e</th>
-            <th className={`${CELL_CLASSES}`}>o</th>
+            <th className={CELL_CLASSES}></th>
+            <th className={CELL_CLASSES}>a</th>
+            <th className={CELL_CLASSES}>i</th>
+            <th className={CELL_CLASSES}>u</th>
+            <th className={CELL_CLASSES}>e</th>
+            <th className={CELL_CLASSES}>o</th>
           </tr>
         </thead>
         <tbody>
           {Object.entries(entries).map(([key, value]) => (
             <tr className={key}>
-              <th className={`${CELL_CLASSES}`}>{key}</th>
+              <th className={CELL_CLASSES}>{key}</th>
               {Object.entries(value).map(([key, value]) => (
-                <td key={key} className={`${CELL_CLASSES} font-japanese`}>
+                <td key={key} className={CELL_CLASSES}>
                   {value[kana] ?? "—"}
                 </td>
               ))}

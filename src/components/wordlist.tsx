@@ -42,7 +42,7 @@ export function Word({ jp, en, kana }: WordProps) {
   return (
     <div class="flex">
       {[jp, en, kana].map(str => (
-        <p class="font-japanese w-1/3 border p-2 text-center">{str}</p>
+        <p class="w-1/3 border p-2 text-center">{str}</p>
       ))}
     </div>
   )
