@@ -9,7 +9,7 @@ const values: Kana[] = [Kana.HIRAGANA, Kana.KATAKANA]
 </script>
 
 <template>
-  <div>
+  <div class="flex items-center justify-center space-x-2">
     <kana-radio
       v-for="kana in values"
       :value="kana"
