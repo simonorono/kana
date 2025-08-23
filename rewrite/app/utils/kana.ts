@@ -10,7 +10,9 @@ interface SeionValue {
 
 type SeionEntry = { [_: string]: SeionValue }
 
-export const SEION: { [_: string]: SeionEntry } = {
+export type Seion = { [_: string]: SeionEntry }
+
+export const SEION: Seion = {
   a: {
     a: { hiragana: "あ", katakana: "ア" },
     i: { hiragana: "い", katakana: "イ" },

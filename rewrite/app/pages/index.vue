@@ -1,3 +1,3 @@
 <template>
-  <kana-table />
+  <kana />
 </template>

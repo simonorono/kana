@@ -4,12 +4,14 @@ const { value } = defineProps<{
 }>()
 
 const emit = defineEmits(["change"])
+
+const values: Kana[] = [Kana.HIRAGANA, Kana.KATAKANA]
 </script>
 
 <template>
   <div>
     <kana-radio
-      v-for="kana in [Kana.HIRAGANA, Kana.KATAKANA]"
+      v-for="kana in values"
       :value="kana"
       :checked="value === kana"
       @change="emit('change', kana)"
