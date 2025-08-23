@@ -1,3 +1,3 @@
 <template>
-  <p>index</p>
+  <kana-table />
 </template>
