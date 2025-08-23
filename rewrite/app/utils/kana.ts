@@ -1,17 +1,3 @@
-export enum Kana {
-  HIRAGANA = "hiragana",
-  KATAKANA = "katakana",
-}
-
-interface SeionValue {
-  hiragana: string | null
-  katakana: string | null
-}
-
-type SeionEntry = { [_: string]: SeionValue }
-
-export type Seion = { [_: string]: SeionEntry }
-
 export const SEION: Seion = {
   a: {
     a: { hiragana: "あ", katakana: "ア" },
