@@ -7,10 +7,6 @@ const { value, checked } = defineProps<{
 const emit = defineEmits(["change"])
 
 const id = `${value}-radio`
-
-function onInputChanged() {
-  emit("change", value)
-}
 </script>
 
 <template>
@@ -22,7 +18,7 @@ function onInputChanged() {
         checked ? 'bg-green-700 text-white' : false,
       ]
         .filter(Boolean)
-        .join('')
+        .join(' ')
     "
   >
     <input
@@ -32,7 +28,7 @@ function onInputChanged() {
       name="kana"
       type="radio"
       :value="value"
-      @change="onInputChanged"
+      @change="emit('change', value)"
     />
     {{ value }}
   </label>

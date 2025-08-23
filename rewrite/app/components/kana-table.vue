@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const kana = ref(Kana.HIRAGANA)
+let kana = ref(Kana.HIRAGANA)
 </script>
 
 <template>
-  <kana-selector :value="kana" @change="k => (kana = k)" />
+  <kana-selector :value="kana" @change="v => (kana = v)" />
 </template>
