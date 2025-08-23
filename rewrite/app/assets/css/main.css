@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource-variable/noto-sans-jp/index.css";
+
+@theme {
+    --font-sans: "sans-serif", "Noto Sans JP Variable";
+}
