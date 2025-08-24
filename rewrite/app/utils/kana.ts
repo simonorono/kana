@@ -114,3 +114,8 @@ export function dakuon() {
 
   return map
 }
+
+export function getSeionValue(row: string, column: string): SeionValue {
+  const entry = SEION[row] as SeionEntry
+  return entry[column] as SeionValue
+}
