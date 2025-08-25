@@ -128,7 +128,7 @@ function setup() {
 }
 
 function newGame() {
-  if (!guess) {
+  if (!guess.value) {
     return
   }
 
