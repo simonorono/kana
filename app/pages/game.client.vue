@@ -161,7 +161,9 @@ setup()
       @click="newGame"
     >
       <p class="mt-4 font-medium">Guess the correct option</p>
-      <a href="/" class="text-blue-800 underline">← Back to index</a>
+      <NuxtLink href="/" class="text-blue-800 underline">
+        ← Back to index
+      </NuxtLink>
 
       <div class="flex grow items-center justify-center">
         <p class="text-9xl">{{ getKanaForOption(secret, guessing) }}</p>
